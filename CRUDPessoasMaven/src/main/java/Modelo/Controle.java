@@ -16,9 +16,9 @@ public class Controle
         if (this.mensagem.equals(""))
         {
             Pessoa pessoa = new Pessoa();
-            pessoa.setNome(listaDadosPessoa.get(0));
-            pessoa.setRg(listaDadosPessoa.get(1));
-            pessoa.setCpf(listaDadosPessoa.get(2));
+            pessoa.setNome(listaDadosPessoa.get(1));
+            pessoa.setRg(listaDadosPessoa.get(2));
+            pessoa.setCpf(listaDadosPessoa.get(3));
             PessoaDAO pessoaDAO = new PessoaDAO();
             pessoaDAO.cadastrarPessoa(pessoa);
             this.mensagem = pessoaDAO.mensagem;
@@ -27,7 +27,19 @@ public class Controle
     
     public Pessoa pesquisarPessoaId(List<String> listaDadosPessoa)
     {
-        return null;
+        this.mensagem = "";
+        PessoaDAO pessoaDAO = new PessoaDAO();
+        Pessoa pessoa = new Pessoa();
+        Validacao validacao = new Validacao();
+        validacao.validarIdPessoa(listaDadosPessoa.get(0));
+        this.mensagem = validacao.mensagem;
+        if (this.mensagem.equals(""))
+        {
+            pessoa.setId(validacao.id);
+            pessoa = pessoaDAO.pesquisarPessoaId(pessoa);
+            this.mensagem = pessoaDAO.mensagem;
+        }
+        return pessoa;
     }
     
     public void editarPessoa(List<String> listaDadosPessoa)

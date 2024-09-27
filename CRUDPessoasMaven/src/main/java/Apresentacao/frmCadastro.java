@@ -109,6 +109,7 @@ public class frmCadastro extends javax.swing.JDialog
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnCadastrarActionPerformed
     {//GEN-HEADEREND:event_btnCadastrarActionPerformed
         List<String> listadadosPessoa = new ArrayList<>();
+        listadadosPessoa.add("0");
         listadadosPessoa.add(txfNome.getText());
         listadadosPessoa.add(txfRg.getText());
         listadadosPessoa.add(txfCpf.getText());

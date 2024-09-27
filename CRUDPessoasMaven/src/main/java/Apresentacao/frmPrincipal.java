@@ -51,6 +51,13 @@ public class frmPrincipal extends javax.swing.JDialog
         jMenu1.add(mniCadastro);
 
         mniPEE.setText("Pesquisar, Editar e Excluir");
+        mniPEE.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                mniPEEActionPerformed(evt);
+            }
+        });
         jMenu1.add(mniPEE);
 
         jMenuBar1.add(jMenu1);
@@ -77,6 +84,12 @@ public class frmPrincipal extends javax.swing.JDialog
         frmCadastro frmC = new frmCadastro(null, true);
         frmC.setVisible(true);
     }//GEN-LAST:event_mniCadastroActionPerformed
+
+    private void mniPEEActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_mniPEEActionPerformed
+    {//GEN-HEADEREND:event_mniPEEActionPerformed
+        frmPEE frmPesquisa = new frmPEE(null, true);
+        frmPesquisa.setVisible(true);
+    }//GEN-LAST:event_mniPEEActionPerformed
 
     /**
      * @param args the command line arguments
