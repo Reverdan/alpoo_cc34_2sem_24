@@ -80,8 +80,22 @@ public class frmPEE extends javax.swing.JDialog
         lblCpf.setText("CPF");
 
         btnExcluir.setText("Excluir");
+        btnExcluir.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnExcluirActionPerformed(evt);
+            }
+        });
 
         btnEditar.setText("Editar");
+        btnEditar.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnEditarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -168,6 +182,34 @@ public class frmPEE extends javax.swing.JDialog
             limparFormulario();
         }
     }//GEN-LAST:event_btnPesquisarIdActionPerformed
+
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnEditarActionPerformed
+    {//GEN-HEADEREND:event_btnEditarActionPerformed
+        List<String> listadadosPessoa = new ArrayList<>();
+        listadadosPessoa.add(txfId.getText());
+        listadadosPessoa.add(txfNome.getText());
+        listadadosPessoa.add(txfRg.getText());
+        listadadosPessoa.add(txfCpf.getText());
+        Controle controle = new Controle();
+        controle.editarPessoa(listadadosPessoa);
+        JOptionPane.showMessageDialog(null, controle.mensagem);
+    }//GEN-LAST:event_btnEditarActionPerformed
+
+    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnExcluirActionPerformed
+    {//GEN-HEADEREND:event_btnExcluirActionPerformed
+        int resp = JOptionPane.showConfirmDialog(null, 
+                "Deseja excluir?", "Exclusão",
+                JOptionPane.YES_NO_OPTION);
+        if(resp == JOptionPane.YES_OPTION)
+        {
+            List<String> listadadosPessoa = new ArrayList<>();
+            listadadosPessoa.add(txfId.getText());
+            Controle controle = new Controle();
+            controle.excluirPessoa(listadadosPessoa);
+            JOptionPane.showMessageDialog(null, controle.mensagem);
+            limparFormulario();
+        }
+    }//GEN-LAST:event_btnExcluirActionPerformed
 
     /**
      * @param args the command line arguments

@@ -74,8 +74,8 @@ public class PessoaDAO
             Connection con = conexao.conectar();
             String instrucaoSql = "update pessoas "
                     + "set nome = ?, "
-                    + "set rg = ?, "
-                    + "set cpf = ? "
+                    + "rg = ?, "
+                    + "cpf = ? "
                     + "where id = ?";
             PreparedStatement stmt = 
                     con.prepareStatement(instrucaoSql);
