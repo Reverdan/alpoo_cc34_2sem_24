@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html">
+    <h:head>
+        <title>Projeto soma</title>
+        <style>
+            body{
+                display: flex;
+                justify-content: center;
+                height: 20vh;
+                margin: 20px;
+            }
+            
+            #formulario{
+                display: flex;
+                justify-content: center;
+                border: 1px solid #ccc;
+                border-radius: 10px;
+                padding: 20px;
+                box-shadow: 0 0 10px rgba(0,0,0,0.1);
+                background-color: #f9f9f9;
+            }
+            
+            h:panelGrid{
+                display: grid;
+                gap: 10px;
+            }
+            
+            h:inputText, h:commandButton{
+                width: 100%;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <h:form id="formulario">
+            <br></br>
+            <br></br>
+            <br></br>
+            <h:panelGrid columns="2">
+                Número 1
+                <h:inputText id="inpNum1" value=""></h:inputText>
+                Numero 2
+                <h:inputText id="inpNum2" value=""></h:inputText>
+                <h:commandButton id="btnSomar" value="Somar"></h:commandButton>
+                <h:inputHidden></h:inputHidden>
+                <h:inputHidden></h:inputHidden>
+                <h:outputText id="otxResultado" value="Resposta"></h:outputText>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
