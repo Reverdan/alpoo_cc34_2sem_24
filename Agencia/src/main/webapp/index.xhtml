@@ -13,13 +13,8 @@
             }
             
             #formulario{
-                display: flex;
                 justify-content: center;
-                border: 1px solid #ccc;
-                border-radius: 10px;
                 padding: 20px;
-                box-shadow: 0 0 10px rgba(0,0,0,0.1);
-                background-color: #f9f9f9;
             }
             
             h:panelGrid{
@@ -39,13 +34,13 @@
             <br></br>
             <h:panelGrid columns="2">
                 Número 1
-                <h:inputText id="inpNum1" value=""></h:inputText>
+                <h:inputText id="inpNum1" value="#{bgrIndex.n1}"></h:inputText>
                 Numero 2
-                <h:inputText id="inpNum2" value=""></h:inputText>
-                <h:commandButton id="btnSomar" value="Somar"></h:commandButton>
+                <h:inputText id="inpNum2" value="#{bgrIndex.n2}"></h:inputText>
+                <h:commandButton id="btnSomar" value="Somar" action="#{bgrIndex.somar()}"></h:commandButton>
                 <h:inputHidden></h:inputHidden>
                 <h:inputHidden></h:inputHidden>
-                <h:outputText id="otxResultado" value="Resposta"></h:outputText>
+                <h:outputText id="otxResultado" value="#{bgrIndex.resultado}"></h:outputText>
             </h:panelGrid>
         </h:form>
     </h:body>
