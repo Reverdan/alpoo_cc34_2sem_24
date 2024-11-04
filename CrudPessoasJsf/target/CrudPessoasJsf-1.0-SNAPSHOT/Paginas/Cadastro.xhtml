@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html">
+    <h:head>
+        <title>Cadastro de Pessoas</title>
+    </h:head>
+    <h:body>
+        <h1>
+            Cadastro de Pessoas
+        </h1>
+        <h:form>
+            <h:panelGrid columns="2">
+                Nome
+                <h:inputText id="inpNome" value="#{bgrCadastro.nome}"></h:inputText>
+                RG
+                <h:inputText id="inpRg" value="#{bgrCadastro.rg}"></h:inputText>
+                CPF
+                <h:inputText id="inpCpf" value="#{bgrCadastro.cpf}"></h:inputText>
+                <h:inputHidden></h:inputHidden>
+                <h:commandButton 
+                    id="btnCadastrar" 
+                    value="Cadastrar"
+                    action="#{bgrCadastro.cadastrar()}">
+                </h:commandButton>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+
+</html>
