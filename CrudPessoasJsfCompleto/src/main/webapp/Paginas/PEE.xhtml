@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html">
+    <h:head>
+        <title>Pesquisa, edição e exclusão</title>
+    </h:head>
+    <h:body>
+        <h1>
+            Pesquisa, edição e exclusão de Pessoas
+        </h1>
+        <br></br>
+        <br></br>
+        <h:form>
+            <h:panelGrid columns="2">
+                Digite um nome para pesquisa
+                <h:inputText id="iptNome" 
+                             value="#{bgrPEE.nome}">
+                </h:inputText>
+                <h:commandButton id="btnPesquisar" 
+                                 value="Pesquisar" 
+                                 action="#{bgrPEE.pesquisarPorNome()}">
+                </h:commandButton>
+                <h:outputText id="otpRespostaPEE"
+                              value="#{bgrPEE.mensagem}">
+                </h:outputText>
+                <br></br>
+                <h:inputHidden></h:inputHidden>
+
+                Nome:
+                <h:outputText id="otpRespostaPEENome"
+                              value="#{bgrPEE.nome}">
+                </h:outputText>
+                
+                RG:
+                <h:outputText id="otpRespostaPEERg"
+                              value="#{bgrPEE.rg}">
+                </h:outputText>
+                 
+                CPF:
+                <h:outputText id="otpRespostaPEECpf"
+                              value="#{bgrPEE.cpf}">
+                </h:outputText>
+            </h:panelGrid>
+            
+            <br></br>
+            
+            <h:panelGrid columns="4" style="padding: 50px">
+                <h:commandButton id="btnExcluir" 
+                                 value="Excluir" 
+                                 action="#{bgrPEE.excluirPorNome()}">
+                </h:commandButton>
+                
+                <h:inputHidden></h:inputHidden>
+                <h:inputHidden></h:inputHidden>
+                
+                <h:commandButton id="btnEditar" 
+                                 value="Editar" 
+                                 action="#{bgrPEE.paginaEdicao()}">
+                </h:commandButton>
+            </h:panelGrid>
+            
+            
+        </h:form>
+    </h:body>
+
+</html>

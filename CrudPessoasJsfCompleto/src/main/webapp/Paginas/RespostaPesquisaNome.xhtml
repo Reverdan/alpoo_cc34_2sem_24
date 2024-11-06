@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core">
+    <h:head>
+        <link rel="StyleSheet" href="css/table-style.css"></link>
+        <title>Pesquisa por nome</title>
+    </h:head>
+    <h:body>
+        <center>
+            <h1>Pesquisa por Nome</h1>
+            <br></br>
+            <br></br>
+            <br></br>
+        </center>
+        
+    </h:body>
+    <center>
+        <h:dataTable
+            value="#{bgrPEE.listaPessoas}"
+            var="lista"
+            styleClass="tabela"
+            headerClass="tabela-header"
+            rowClasses="tabela-even-row, tabela-odd-row">
+            <h:column> 
+                <f:facet name="header">ID</f:facet> 
+                #{lista.id} 
+            </h:column>
+            <h:column> 
+                <f:facet name="header">NOME</f:facet> 
+                #{lista.nome} 
+            </h:column>
+            <h:column> 
+                <f:facet name="header">RG</f:facet> 
+                #{lista.rg} 
+            </h:column>
+            <h:column> 
+                <f:facet name="header">CPF</f:facet> 
+                #{lista.cpf} 
+            </h:column>
+            <h:column> 
+                <h:form>
+                    <h:commandButton value="Selecionar" action="#{bgrPEE.selecionar(lista.nome)}"></h:commandButton>
+                </h:form>
+
+            </h:column>
+        </h:dataTable>
+        
+    </center>
+
+</html>

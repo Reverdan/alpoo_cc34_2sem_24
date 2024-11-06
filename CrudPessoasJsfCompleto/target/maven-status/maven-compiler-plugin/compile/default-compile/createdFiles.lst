@@ -1,0 +1,11 @@
+DAL\PessoaDAO.class
+ManagedBeans\bgrEditar.class
+com\mycompany\crudpessoasjsf\resources\JakartaEE10Resource.class
+Modelo\Validacao.class
+Modelo\Controle.class
+Modelo\Pessoa.class
+Modelo\Estaticos.class
+ManagedBeans\bgrPEE.class
+ManagedBeans\bgrCadastro.class
+com\mycompany\crudpessoasjsf\JakartaRestConfiguration.class
+DAL\HibernateUtil.class
